@@ -1,0 +1,57 @@
+<ion-view view-title="Browse">
+  <ion-content>
+<head>
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<title>Get Reports</title>
+
+</head>
+
+
+<body >
+ 
+
+
+<div>
+
+
+
+<div class="container-fluid">
+  <h1>ILC Report</h1>
+
+<form>
+	<div class="form-group">
+      <label for="Week">Week</label>
+      <Select class="form-control" ng-model="SearchData.week" value="SearchData.week" name="Week"><option>17/12/2016-23/12/2016</option><option>24/12/2016-30/12/2016</option></select>
+    </div>
+	<div class="form-group">
+      <label for="Week">ManagersID</label>
+	   <input type="text" class="form-control" ng-model="SearchData.ManagersID" value="SearchData.ManagersID" name="ManagersID" placeholder="Enter Managers ID" >
+    </div>
+    <button ng-click="getDefaulters()" >Submit</button>
+  </form>
+
+  <table ng-table="tableParams" class="table" show-filter="true">
+  <tr ng-repeat="x in data">
+    <td title="'SrNo'" filter="{ SrNo: 'number'}" sortable="'SrNo'">{{ $index + 1 }}</td>
+    <td title="'EmpID'" filter="{ EmpID: 'text'}" sortable="'EmpID'">{{ x.EmpID }}</td>
+    <td title="'EmpName'" filter="{ EmpName: 'text'}" sortable="'EmpName'">{{ x.EmpName }}</td>
+	<td title="'ManagersID'" filter="{ ManagersID: 'text'}" sortable="'ManagersID'">{{ x.ManagersID }}</td>
+	<td title="'ManagersName'" filter="{ ManagersName: 'text'}" sortable="'ManagersName'">{{ x.ManagersName }}</td>
+  </tr>
+</table>
+  
+</div>
+
+
+  
+</div>
+
+
+</body>
+
+  
+  </ion-content>
+</ion-view>
